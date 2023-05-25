@@ -1,0 +1,24 @@
+
+<div name="container" class="ms-4">
+  <h1>All our flats (<%=@flats.length%>)</h1>
+
+  <button type="button" class="btn btn-outline-secondary mb-3">
+    <%= link_to "Add a flat", new_flat_path %>
+  </button>
+
+
+
+  <div class="row">
+    <%@flats.each do |flat| %>
+        <div class="col-sm-3 mb-3">
+          <div class="card" style="width: 18rem;">
+            <h3 class="card-title"><%= flat.name %></h3>
+            <p class="card-text"><%=flat.address %></p>
+            <i class="fa-solid fa-euro-sign"><%=flat.price_per_night %></i> <i class="fa-solid fa-person"><%=flat.number_of_guests %></i>
+            <%= link_to "See more", flats_path %>
+          </div>
+        </div>
+    <%end %>
+  </div>
+
+</div>
